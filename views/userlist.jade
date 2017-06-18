@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    h1.
+        #{headtitle}
+    ul
+        each user, i in userlist
+            li
+                span= "User Id :" + user._id
+                br
+                span User Name: 
+                a(href="mailto:#{user.email}")= user.username
+                br
+                span User Email:
+                a(href="#")= user.email
+    a(href="/newuser") Add new User

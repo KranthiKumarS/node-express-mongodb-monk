@@ -1,0 +1,48 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  // Wrapper
+  #wrapper
+
+        // USER INFO
+        #userInfo
+            h2 User Info
+            p
+                strong ID:
+                |  <span id='userInfoId'></span>
+                br
+                strong Name:
+                |  <span id='userInfoName'></span>
+                br
+                strong Email:
+                |  <span id='userInfoAge'></span>
+                
+        // /USER INFO
+        // USER LIST
+        h2 User List
+        #userList
+            table(class="table")
+                thead
+                    th UserName
+                    th Email
+                    th Delete?
+                tbody
+        // /USER LIST
+        // ADD USER
+        h2 Add User
+        #addUser
+            form#formAddUser(name="adduser", method="post", action="/adduser")
+                div(class="form-group")
+                    lable(for="inputUsername") User Name
+                    input#inputUsername(class="form-control" type="text", placeholder="User name", name="username")
+                div(class="form-group")
+                    lable(for="inputUserEmail") Email Id
+                    input#inputUserEmail(class="form-control", type="email", placeholder="Email", name="useremail")
+                div(class="form-group")
+                    button#btnSubmit(class="btn btn-default", type="submit") Submit
+        // /ADDUSER 
+  // /WRAPPER
+  #formWrapper
+  
